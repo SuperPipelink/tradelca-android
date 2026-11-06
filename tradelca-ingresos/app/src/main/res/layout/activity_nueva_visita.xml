@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre_visitante"
+            android:inputType="textPersonName"
+            android:maxLength="150" />
+
+        <EditText
+            android:id="@+id/documento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/documento"
+            android:inputType="text"
+            android:maxLength="30" />
+
+        <EditText
+            android:id="@+id/empresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/empresa"
+            android:inputType="text"
+            android:maxLength="150" />
+
+        <EditText
+            android:id="@+id/motivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/motivo"
+            android:inputType="textMultiLine"
+            android:maxLength="250" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/visitado" />
+
+        <Spinner
+            android:id="@+id/visitado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/hora_ingreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hora_ingreso"
+            android:inputType="time"
+            android:maxLength="5" />
+
+        <Button
+            android:id="@+id/registrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/registrar" />
+
+        <TextView
+            android:id="@+id/mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="#B91C1C" />
+    </LinearLayout>
+</ScrollView>

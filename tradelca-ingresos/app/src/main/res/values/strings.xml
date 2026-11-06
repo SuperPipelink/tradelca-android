@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tradelca Ingresos</string>
+    <string name="titulo_visitas">Visitas de hoy</string>
+    <string name="titulo_nueva">Nueva visita</string>
+    <string name="titulo_ajustes">Servidor</string>
+    <string name="usuario">Usuario</string>
+    <string name="clave">Clave</string>
+    <string name="codigo">Código del segundo factor (6 dígitos)</string>
+    <string name="entrar">Entrar</string>
+    <string name="servidor">Servidor</string>
+    <string name="direccion">Dirección del servidor</string>
+    <string name="direccion_ayuda">Emulador: http://10.0.2.2:8001 · Celular en la misma red: http://IP-del-PC:8001</string>
+    <string name="guardar">Guardar</string>
+    <string name="nueva">Nueva visita</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="salir">Salir</string>
+    <string name="nombre_visitante">Nombre del visitante *</string>
+    <string name="documento">Documento</string>
+    <string name="empresa">Empresa</string>
+    <string name="motivo">Motivo</string>
+    <string name="visitado">Persona visitada *</string>
+    <string name="hora_ingreso">Hora de ingreso (HH:MM) *</string>
+    <string name="registrar">Registrar visita</string>
+    <string name="sin_visitas">No hay visitas registradas hoy.</string>
+    <string name="toca_para_salida">Toca una visita sin salida para registrar su hora de salida.</string>
+</resources>

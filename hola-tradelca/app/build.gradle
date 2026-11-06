@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.tradelca.hola'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.tradelca.hola'
+        minSdk 24          // Android 7.0 en adelante
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Sin librerías externas en la aplicación: solo el SDK de Android. JUnit para las pruebas unitarias.
+    testImplementation 'junit:junit:4.13.2'
+}

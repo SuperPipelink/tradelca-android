@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hola Tradelca</string>
+    <string name="saludo">¡Hola, Tradelca!</string>
+    <string name="descripcion">Mi primera aplicación Android · SENA ADSO · Ficha 3336119</string>
+    <string name="boton">Saludar</string>
+    <string name="mensaje">Bienvenido, %1$s. La aplicación funciona.</string>
+    <string name="pista_nombre">Escribe tu nombre</string>
+</resources>
