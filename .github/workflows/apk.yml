@@ -25,6 +25,9 @@ jobs:
 
       - name: SDK de Android
         uses: android-actions/setup-android@v3
+        with:
+          # El paquete «tools» que instala por defecto ya no existe; se piden solo los necesarios
+          packages: 'platform-tools platforms;android-34 build-tools;34.0.0'
 
       - name: Gradle 8.7
         uses: gradle/actions/setup-gradle@v4
