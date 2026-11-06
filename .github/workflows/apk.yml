@@ -47,3 +47,37 @@ jobs:
         with:
           name: ${{ matrix.proyecto }}-apk
           path: ${{ matrix.proyecto }}/app/build/outputs/apk/debug/*.apk
+
+  publicar:
+    # Deja los APK a la mano: como versión descargable (Releases) y en la rama «apk»
+    needs: apk
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: apks
+      - name: Ordenar los APK
+        run: |
+          mkdir -p salida
+          cp apks/hola-tradelca-apk/app-debug.apk salida/hola-tradelca.apk
+          cp apks/tradelca-ingresos-apk/app-debug.apk salida/tradelca-ingresos.apk
+          ls -la salida
+      - name: Publicar como versión «apk-ultima»
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete apk-ultima --cleanup-tag --yes -R "$GITHUB_REPOSITORY" || true
+          gh release create apk-ultima salida/*.apk -R "$GITHUB_REPOSITORY" \
+            --title "APK de la Guía 8" --notes "Compilados por GitHub Actions desde el commit ${GITHUB_SHA::7}."
+      - name: Guardar en la rama apk
+        run: |
+          cd salida
+          git init -q -b apk
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add *.apk
+          git commit -q -m "APK compilados desde ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" apk
